@@ -1,8 +1,13 @@
-<label class="item item-input item-stacked-label ng-class:{'has-error': model.$error.messages}">
+<label class="item item-input item-stacked-label ng-class:{'has-error': model.$error.messages}" ng-click="showItems($event)">
 	<span class="input-label select-label {{inputLabelCss}}">{{label}}</span>
 	<span class='pull-right required-indicator' ng-if='required'>*</span>
-
-	<input type="text" placeholder="{{placeholder}}" ng-model="text" auto-advance ng-click="showItems($event)">
+	
+	<div class='fancy-select-input'>
+		<span class='select-placeholder' ng-hide='text.length'>{{placeholder}}</span>
+		<span class='select-text'>{{text}}</span>
+	</div>
+	
+	<!-- <input type="text" class='fancy-select-input' placeholder="{{placeholder}}" ng-model="text" auto-advance > -->
 	<!-- <input type="text" placeholder="{{placeholder}}" ng-model="text" auto-advance ng-click="showItems($event)"> -->
 
 	<span type='text' name='{{field}}' ng-model="model" validate-input />
